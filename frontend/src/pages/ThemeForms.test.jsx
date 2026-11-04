@@ -101,6 +101,9 @@ describe('dark post forms and previews', () => {
   it('validates without writes, counts Unicode informationally with no maximum and saves long content', async () => {
     const user = userEvent.setup();
     renderAt('/write', writer);
+    expect(screen.getByText('A blank page')).toHaveClass('section-label', 'dark:text-slate-400');
+    expect(screen.getByText('Plain text, saved only in this browser. Do not include sensitive data.'))
+      .toHaveClass('text-foreground-muted', 'dark:text-slate-400');
     expectDarkField(screen.getByLabelText('Title'));
     const content = screen.getByLabelText('Content');
     expectDarkField(content);

@@ -14,7 +14,7 @@ test('public keyboard toggle survives login, route clicks, reload and logout', a
   await page.goto('/');
   await openNavigation(page);
   const nav = page.getByRole('navigation', { name: 'Primary' });
-  const toggle = nav.getByRole('button', { name: 'Switch to dark mode' });
+  const toggle = nav.getByRole('button', { name: /^Switch to (dark|light) mode$/ });
   await expect(toggle).toBeVisible();
   await expect(page.locator('html')).not.toHaveClass(/\bdark\b/);
   expect(await page.evaluate(() => localStorage.getItem('writespace_theme'))).toBeNull();

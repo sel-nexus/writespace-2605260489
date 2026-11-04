@@ -22,13 +22,13 @@ export default function WriteBlog({ session }) {
     <main id="main-content" className="page-container py-16 sm:py-24">
       <div className="mx-auto max-w-prose space-y-8">
         <header className="space-y-3">
-          <p className="section-label">
+          <p className="section-label dark:text-slate-400">
             A blank page
           </p>
           <h1 className="text-4xl sm:text-5xl">
             Write a post.
           </h1>
-          <p className="text-foreground-muted">
+          <p className="text-foreground-muted dark:text-slate-400">
             Plain text, saved only in this browser. Do not include sensitive data.
           </p>
         </header>

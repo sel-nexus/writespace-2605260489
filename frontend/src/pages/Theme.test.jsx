@@ -123,6 +123,40 @@ describe('theme initialization and keyboard control', () => {
 });
 
 describe('public, authenticated and mobile navigation contracts', () => {
+  it('keeps a dark logout failure readable and retains session, route and theme until a successful retry', async () => {
+    localStorage.setItem('writespace_theme', 'dark');
+    localStorage.setItem('writespace_session', JSON.stringify(writer));
+    const sessionBefore = localStorage.getItem('writespace_session');
+    window.history.replaceState({}, '', '/write');
+    const user = userEvent.setup();
+    render(<App />);
+    const removal = vi.spyOn(Storage.prototype, 'removeItem').mockImplementation(() => {
+      throw new Error('Blocked');
+    });
+
+    await user.click(screen.getByRole('button', { name: 'Log out' }));
+    expect(screen.getByRole('alert')).toHaveTextContent('Logout failed.');
+    expect(screen.getByRole('alert')).toHaveClass('text-error', 'dark:text-red-300');
+    expect(localStorage.getItem('writespace_session')).toBe(sessionBefore);
+    expect(window.location.pathname).toBe('/write');
+    expect(screen.getByRole('heading', { name: 'Write a post.' })).toBeInTheDocument();
+    expect(document.documentElement).toHaveClass('dark');
+    expect(localStorage.getItem('writespace_theme')).toBe('dark');
+    expect(screen.getByRole('button', { name: 'Switch to light mode' })).toBeInTheDocument();
+
+    removal.mockRestore();
+    await user.click(screen.getByRole('button', { name: 'Log out' }));
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    expect(localStorage.getItem('writespace_session')).toBeNull();
+    expect(window.location.pathname).toBe('/');
+    expect(screen.queryByRole('button', { name: 'Log out' })).not.toBeInTheDocument();
+    expect(within(screen.getByRole('navigation', { name: 'Primary' }))
+      .getByRole('link', { name: 'Sign in' })).toBeInTheDocument();
+    expect(document.documentElement).toHaveClass('dark');
+    expect(localStorage.getItem('writespace_theme')).toBe('dark');
+    expect(screen.getByRole('button', { name: 'Switch to light mode' })).toBeInTheDocument();
+  });
+
   it.each([[null, 'public'], [writer, 'writer'], [admin, 'admin']])(
     'retains %s navigation and uses the same toggle in the mobile menu', async (session, mode) => {
       if (session) localStorage.setItem('writespace_session', JSON.stringify(session));

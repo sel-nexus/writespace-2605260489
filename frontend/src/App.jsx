@@ -54,7 +54,10 @@ export function AppRoutes() {
 
   return (
     <div className="min-h-screen bg-background text-foreground dark:bg-neutral-950 dark:text-neutral-50">
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-10 focus:bg-surface focus:p-4 dark:focus:bg-neutral-900">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-10 focus:bg-surface focus:p-4 dark:focus:bg-neutral-900"
+      >
         Skip to content
       </a>
       <Navbar
@@ -64,7 +67,7 @@ export function AppRoutes() {
         onToggleTheme={handleToggleTheme}
       />
       {logoutError && (
-        <p role="alert" className="page-container py-4 text-sm text-error">
+        <p role="alert" className="page-container py-4 text-sm text-error dark:text-red-300">
           Logout failed. {logoutError}
         </p>
       )}

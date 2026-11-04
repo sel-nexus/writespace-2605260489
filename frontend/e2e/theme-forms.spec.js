@@ -47,6 +47,10 @@ test('dark registration login write and edit preserve real records and informati
   await page.getByLabel('Password').fill('demo-only');
   await page.getByRole('button', { name: 'Sign in', exact: true }).click();
   await page.getByRole('link', { name: 'Write a post' }).click();
+  await expect(page.locator('html')).toHaveClass(/dark/);
+  await expect(page.getByText('A blank page', { exact: true })).toHaveCSS('color', 'rgb(148, 163, 184)');
+  await expect(page.getByText('Plain text, saved only in this browser. Do not include sensitive data.', { exact: true }))
+    .toHaveCSS('color', 'rgb(148, 163, 184)');
   await page.getByRole('button', { name: 'Save post' }).click();
   await expect(page.getByLabel('Content')).toHaveAttribute('aria-invalid', 'true');
   await page.getByLabel('Title').fill('Dark browser journey');
