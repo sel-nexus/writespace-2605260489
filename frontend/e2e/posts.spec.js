@@ -42,7 +42,7 @@ test('create edit reload cancel and confirm deletion through real links', async 
   expect(await persisted(page)).toEqual([]);
   await page.getByLabel('Title').fill('Browser journey');
   await page.getByLabel('Content').fill('Plain text\nSecond line');
-  await expect(page.getByRole('status')).toHaveText('21 characters');
+  await expect(page.getByRole('status')).toHaveText('22 characters');
   expect(await persisted(page)).toEqual([]);
   await page.getByRole('button', { name: 'Save post' }).click();
   await expect(page).toHaveURL(/\/blog\/[^/]+$/);

@@ -148,9 +148,10 @@ describe('landing content and local previews', () => {
     await user.click(screen.getByRole('button', { name: 'Open navigation' }));
     await user.click(screen.getByRole('button', { name: 'Close navigation' }));
     await user.click(screen.getByRole('link', { name: 'Post p1' }));
-    expect(window.location.pathname).toBe('/blog/p1');
-    expect(screen.getByRole('heading', { name: 'This page isn’t here.' })).toBeInTheDocument();
-    await user.click(screen.getByRole('link', { name: 'Back to WriteSpace' }));
+    expect(window.location.pathname).toBe('/login');
+    expect(screen.getByRole('heading', { name: 'Welcome back.' })).toBeInTheDocument();
+    await user.click(screen.getByRole('link', { name: 'WriteSpace home', exact: true }));
+    expect(window.location.pathname).toBe('/');
     expect(screen.getByRole('link', { name: 'Post p1' })).toBeInTheDocument();
     expect(set).not.toHaveBeenCalled();
     expect(remove).not.toHaveBeenCalled();
@@ -250,7 +251,7 @@ describe('role-aware navigation and route shell', () => {
     await user.click(within(screen.getByRole('navigation', { name: 'Primary' })).getByRole('link', { name: 'Sign in' }));
     expect(window.location.pathname).toBe('/login');
     expect(screen.getByRole('button', { name: 'Open navigation' })).toHaveAttribute('aria-expanded', 'false');
-    expect(screen.getByRole('heading', { name: 'This page isn’t here.' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Welcome back.' })).toBeInTheDocument();
   });
 
   it('supports keyboard activation and closes on clicking the current Explore link', async () => {

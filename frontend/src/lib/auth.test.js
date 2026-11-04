@@ -64,6 +64,25 @@ describe('login', () => {
     }
   });
 
+  it('logs in with long exact credentials and roundtrips the complete display name', () => {
+    const username = ` Writer-${'u'.repeat(16384)} `;
+    const password = ` Password-${'p'.repeat(16384)} `;
+    const displayName = ` Display-${'名'.repeat(16384)} `;
+    const user = { ...account, username, password, displayName };
+    const identity = { ...session, username, displayName };
+    const raw = JSON.stringify([user]);
+    localStorage.setItem(STORAGE_KEYS.users, raw);
+    localStorage.setItem(STORAGE_KEYS.session, JSON.stringify(session));
+
+    expect(login(username.toLowerCase(), password).error.code).toBe('INVALID_CREDENTIALS');
+    expect(login(username, password.trim()).error.code).toBe('INVALID_CREDENTIALS');
+    expect(getSession()).toEqual({ ok: true, value: session });
+    expect(login(username, password)).toEqual({ ok: true, value: identity });
+    expect(getSession()).toEqual({ ok: true, value: identity });
+    expect(readJson(STORAGE_KEYS.users, [])).toEqual({ ok: true, value: [user] });
+    expect(localStorage.getItem(STORAGE_KEYS.users)).toBe(raw);
+  });
+
   it.each(['{', '{}', 'null', '[null]', '[[]]', '[23]'])('fails closed on malformed account storage %s', (raw) => {
     localStorage.setItem(STORAGE_KEYS.users, raw);
     expect(login('writer', ' demo-only ').error.code).toBe('MALFORMED');
@@ -161,6 +180,29 @@ describe('registration validation and persistence', () => {
     expect(getSession()).toEqual({ ok: true, value: identity });
   });
 
+  it('registers long username, email and matching password verbatim and supports later login', () => {
+    const username = ` Writer-${'u'.repeat(16384)} `;
+    const email = `${'e'.repeat(16384)}@example.test`;
+    const password = ` Password-${'p'.repeat(16384)} `;
+    const values = { username, email, password, confirmPassword: password };
+    const user = {
+      id: 'user-uuid', displayName: username, username, email, password,
+      role: 'user', createdAt: '2026-11-04T12:00:00.000Z',
+    };
+    const identity = { userId: user.id, username, displayName: username, role: 'user' };
+
+    expect(register(values)).toEqual({ ok: true, value: { user, session: identity } });
+    expect(readJson(STORAGE_KEYS.users, [])).toEqual({ ok: true, value: [user] });
+    expect(getSession()).toEqual({ ok: true, value: identity });
+    expect(register(values).error.code).toBe('DUPLICATE_USERNAME');
+    expect(readJson(STORAGE_KEYS.users, [])).toEqual({ ok: true, value: [user] });
+    expect(logout()).toEqual({ ok: true, value: null });
+    expect(login(username, password.trim()).error.code).toBe('INVALID_CREDENTIALS');
+    expect(getSession()).toEqual({ ok: true, value: null });
+    expect(login(username, password)).toEqual({ ok: true, value: identity });
+    expect(getSession()).toEqual({ ok: true, value: identity });
+  });
+
   it('rejects exact duplicates while allowing case-sensitive Admin and Writer names', () => {
     localStorage.setItem(STORAGE_KEYS.users, JSON.stringify([account]));
     expect(register(input).error.code).toBe('DUPLICATE_USERNAME');
@@ -198,6 +240,24 @@ describe('registration validation and persistence', () => {
     vi.stubGlobal('crypto', crypto);
     expect(register(input).error.code).toBe('UNSUPPORTED_ID');
     expect(localStorage.length).toBe(0);
+  });
+
+  it.each(['user-1', 'admin'])('rejects generated identity %s and preserves accounts and session', (id) => {
+    const usersRaw = JSON.stringify([account]);
+    const sessionRaw = JSON.stringify(session);
+    localStorage.setItem(STORAGE_KEYS.users, usersRaw);
+    localStorage.setItem(STORAGE_KEYS.session, sessionRaw);
+    vi.stubGlobal('crypto', { randomUUID: () => id });
+
+    expect(register({ ...input, username: 'new-writer' })).toEqual({
+      ok: false, error: { code: 'UNSUPPORTED_ID', message: 'This browser cannot generate account IDs.' },
+    });
+    expect(localStorage.getItem(STORAGE_KEYS.users)).toBe(usersRaw);
+    expect(localStorage.getItem(STORAGE_KEYS.session)).toBe(sessionRaw);
+    expect(readJson(STORAGE_KEYS.users, [])).toEqual({ ok: true, value: [account] });
+    expect(getSession()).toEqual({ ok: true, value: session });
+    expect(login(account.username, account.password)).toEqual({ ok: true, value: session });
+    expect(localStorage.getItem(STORAGE_KEYS.users)).toBe(usersRaw);
   });
 
   it('reports first-key failure and creates neither account nor session', () => {

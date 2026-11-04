@@ -114,7 +114,9 @@ export function register(input) {
       return failure('UNSUPPORTED_ID', 'This browser cannot generate account IDs.');
     }
     id = globalThis.crypto.randomUUID();
-    if (!isText(id)) return failure('UNSUPPORTED_ID', 'This browser cannot generate account IDs.');
+    if (!isText(id) || id === 'admin' || users.value.some((user) => user.id === id)) {
+      return failure('UNSUPPORTED_ID', 'This browser cannot generate account IDs.');
+    }
   } catch {
     return failure('UNSUPPORTED_ID', 'This browser cannot generate account IDs.');
   }

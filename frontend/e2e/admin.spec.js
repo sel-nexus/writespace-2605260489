@@ -1,6 +1,17 @@
 /** Exercise live Admin journeys with the existing automatic console-error fixture. */
 import { test, expect } from './fixtures.js';
 
+/** Reveal primary navigation on mobile without closing an already-open menu. */
+async function openPrimaryNavigation(page) {
+  if (page.viewportSize().width < 640) {
+    const toggle = page.getByRole('button', { name: /^(Open|Close) navigation$/ });
+    if (await toggle.getAttribute('aria-expanded') === 'false') {
+      await toggle.click();
+    }
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  }
+}
+
 /** Sign in through the existing form without injecting a session. */
 async function login(page, username = 'admin', password = 'admin') {
   await page.getByLabel('Username', { exact: true }).fill(username);
@@ -56,12 +67,19 @@ test('Admin validates, creates both roles, reloads and logs into each new accoun
   await page.reload();
   await expect(page.getByRole('button', { name: 'Delete new-admin' })).toBeVisible();
   expect(await accounts(page)).toEqual(saved);
+  await openPrimaryNavigation(page);
   await page.getByRole('button', { name: 'Log out' }).click();
+  await expect(page).toHaveURL(/\/$/);
+  await openPrimaryNavigation(page);
   await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Sign in' }).click();
   await login(page, 'new-writer', ' demo-only ');
   await expect(page).toHaveURL(/\/blogs$/);
+  await openPrimaryNavigation(page);
   await expect(page.getByRole('link', { name: 'Your reading space' })).toBeVisible();
+  await openPrimaryNavigation(page);
   await page.getByRole('button', { name: 'Log out' }).click();
+  await expect(page).toHaveURL(/\/$/);
+  await openPrimaryNavigation(page);
   await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Sign in' }).click();
   await login(page, 'new-admin', ' demo-only ');
   await expect(page).toHaveURL(/\/admin$/);
@@ -108,6 +126,7 @@ test('Admin edits and deletes another writer from newest-five inline controls', 
   await page.getByRole('button', { name: 'Save changes' }).click();
   const edited = before.map((post) => post.id === 'p6' ? { ...post, title: 'Admin revision' } : post);
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem('writespace_posts')))).toEqual(edited);
+  await openPrimaryNavigation(page);
   await page.getByRole('link', { name: 'Admin dashboard' }).click();
   await page.reload();
   await expect(newest.getByRole('link', { name: 'Admin revision', exact: true })).toBeVisible();

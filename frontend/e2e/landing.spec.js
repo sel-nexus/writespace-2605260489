@@ -90,6 +90,31 @@ test('empty landing, hero actions, footer destinations and mobile menu', async (
   expect(browserErrors).toEqual([]);
 });
 
+test('empty-state writing action opens the registration form without writing local data', async ({ page, browserErrors }) => {
+  await page.goto('/');
+  await expect(page.getByRole('heading', { name: 'No posts here yet.' })).toBeVisible();
+  await page.getByRole('link', { name: 'Write your first post' }).click();
+  await expect(page).toHaveURL(/\/register$/);
+  await expect(page.getByRole('heading', { name: 'Join WriteSpace.' })).toBeVisible();
+  await page.getByRole('link', { name: 'WriteSpace home', exact: true }).click();
+  await expect(page).toHaveURL(/\/$/);
+  await expect(page.getByRole('heading', { name: 'Room for your words.' })).toBeVisible();
+  expect(await page.evaluate(() => localStorage.length)).toBe(0);
+  expect(browserErrors).toEqual([]);
+});
+
+test('footer Register opens the registration form without writing local data', async ({ page, browserErrors }) => {
+  await page.goto('/');
+  await page.getByRole('navigation', { name: 'Footer' }).getByRole('link', { name: 'Register' }).click();
+  await expect(page).toHaveURL(/\/register$/);
+  await expect(page.getByRole('heading', { name: 'Join WriteSpace.' })).toBeVisible();
+  await page.getByRole('link', { name: 'WriteSpace home', exact: true }).click();
+  await expect(page).toHaveURL(/\/$/);
+  await expect(page.getByRole('heading', { name: 'Room for your words.' })).toBeVisible();
+  expect(await page.evaluate(() => localStorage.length)).toBe(0);
+  expect(browserErrors).toEqual([]);
+});
+
 for (const role of ['user', 'Admin']) {
   test(`local ${role} session presents the correct navbar destination`, async ({ page, browserErrors }, testInfo) => {
     await page.addInitScript((role) => {
@@ -107,7 +132,7 @@ for (const role of ['user', 'Admin']) {
     await page.screenshot({ path: testInfo.outputPath(`landing-${role}.png`), fullPage: true });
     await destination.click();
     await expect(page).toHaveURL(role === 'Admin' ? /\/admin$/ : /\/blogs$/);
-    await expect(page.getByRole('heading', { name: role === 'Admin' ? 'This page isn’t here.' : 'Your reading space.' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: role === 'Admin' ? 'Admin dashboard.' : 'Your reading space.' })).toBeVisible();
     await page.getByRole('link', { name: 'WriteSpace home', exact: true }).click();
     expect(await page.evaluate(() => JSON.parse(localStorage.getItem('writespace_session')).role)).toBe(role);
     expect(browserErrors).toEqual([]);

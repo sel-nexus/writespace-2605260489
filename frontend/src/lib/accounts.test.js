@@ -1,7 +1,7 @@
 /** Verify account branches against real browser storage and exact state transitions. */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { listUsers, validateAdminUser, createAdminUser, deleteUser, deletionProtection } from './accounts.js';
-import { login } from './auth.js';
+import { getSession, login } from './auth.js';
 import { STORAGE_KEYS } from './storage.js';
 
 const admin = { userId: 'admin', username: 'admin', displayName: 'Admin', role: 'Admin' };
@@ -48,6 +48,49 @@ describe('account validation and creation', () => {
     expect(localStorage.getItem(STORAGE_KEYS.session)).toBeNull();
     expect(login('editor', ' demo-only ').ok).toBe(true);
     expect(JSON.parse(localStorage.getItem(STORAGE_KEYS.session))).toMatchObject({ userId: result.value.id, role });
+  });
+
+  it('creates long account text verbatim, requeries it and authenticates exact credentials', () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-11-05T12:00:00.000Z'));
+    const username = ` Editor-${'u'.repeat(16384)} `;
+    const displayName = ` Display-${'名'.repeat(16384)} `;
+    const password = ` Password-${'p'.repeat(16384)} `;
+    const values = { username, displayName, password, role: 'user' };
+    const created = {
+      ...values, id: '7a587348-f914-4df9-80a6-c7e7dc813519', createdAt: '2026-11-05T12:00:00.000Z',
+    };
+    const identity = { userId: created.id, username, displayName, role: 'user' };
+    const sessionRaw = JSON.stringify(admin);
+    localStorage.setItem(STORAGE_KEYS.session, sessionRaw);
+
+    expect(createAdminUser(values, admin)).toEqual({ ok: true, value: created });
+    expect(listUsers(admin)).toEqual({ ok: true, value: [account, created] });
+    expect(stored()).toEqual([account, created]);
+    expect(localStorage.getItem(STORAGE_KEYS.session)).toBe(sessionRaw);
+    expect(createAdminUser(values, admin).error.code).toBe('DUPLICATE_USERNAME');
+    expect(listUsers(admin)).toEqual({ ok: true, value: [account, created] });
+    expect(login(username.toLowerCase(), password).error.code).toBe('INVALID_CREDENTIALS');
+    expect(login(username, password.trim()).error.code).toBe('INVALID_CREDENTIALS');
+    expect(getSession()).toEqual({ ok: true, value: admin });
+    expect(login(username, password)).toEqual({ ok: true, value: identity });
+    expect(getSession()).toEqual({ ok: true, value: identity });
+    expect(listUsers(admin)).toEqual({ ok: true, value: [account, created] });
+  });
+
+  it.each(['u1', 'admin'])('rejects generated identity %s without changing accounts or active session', (id) => {
+    const usersRaw = localStorage.getItem(STORAGE_KEYS.users);
+    const sessionRaw = JSON.stringify(admin);
+    localStorage.setItem(STORAGE_KEYS.session, sessionRaw);
+    vi.stubGlobal('crypto', { randomUUID: () => id });
+
+    expect(createAdminUser({ ...input, username: 'new' }, admin)).toEqual({
+      ok: false, error: { code: 'UNSUPPORTED_ID', message: 'This browser cannot generate account IDs.' },
+    });
+    expect(localStorage.getItem(STORAGE_KEYS.users)).toBe(usersRaw);
+    expect(localStorage.getItem(STORAGE_KEYS.session)).toBe(sessionRaw);
+    expect(listUsers(admin)).toEqual({ ok: true, value: [account] });
+    expect(getSession()).toEqual({ ok: true, value: admin });
   });
 
   it.each([null, undefined, [], 'input', 1, true])('rejects invalid input shape %j with all field errors', (value) => {

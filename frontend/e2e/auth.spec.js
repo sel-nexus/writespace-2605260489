@@ -3,6 +3,17 @@ import { test, expect } from './fixtures.js';
 
 const protectedPaths = ['/blogs', '/blog/example', '/write', '/edit/example', '/admin', '/users'];
 
+/** Reveal primary navigation on mobile without closing an already-open menu. */
+async function openPrimaryNavigation(page) {
+  if (page.viewportSize().width < 640) {
+    const toggle = page.getByRole('button', { name: /^(Open|Close) navigation$/ });
+    if (await toggle.getAttribute('aria-expanded') === 'false') {
+      await toggle.click();
+    }
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  }
+}
+
 /** Fill all four registration fields through their accessible labels. */
 async function fillRegistration(page, username = 'journey-writer') {
   await page.getByLabel('Username', { exact: true }).fill(username);
@@ -14,6 +25,7 @@ async function fillRegistration(page, username = 'journey-writer') {
 test('public exploration to registration, reload, logout and exact local login', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('heading', { name: 'No posts here yet.' })).toBeVisible();
+  await openPrimaryNavigation(page);
   await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Join WriteSpace' }).click();
   await expect(page).toHaveURL(/\/register$/);
   await expect(page.getByText(/Do not use real passwords or sensitive data/)).toBeVisible();
@@ -21,6 +33,7 @@ test('public exploration to registration, reload, logout and exact local login',
   await expect.poll(() => page.evaluate(() => localStorage.getItem('writespace_session'))).toBeNull();
   await page.getByRole('button', { name: 'Create account' }).click();
   await expect(page).toHaveURL(/\/blogs$/);
+  await openPrimaryNavigation(page);
   await expect(page.getByRole('navigation', { name: 'Primary' })).toContainText('journey-writer');
   const saved = await page.evaluate(() => ({
     users: JSON.parse(localStorage.getItem('writespace_users')),
@@ -31,10 +44,13 @@ test('public exploration to registration, reload, logout and exact local login',
   expect(saved.users[0]).not.toHaveProperty('confirmPassword');
   expect(saved.session.userId).toBe(saved.users[0].id);
   await page.reload();
+  await openPrimaryNavigation(page);
   await expect(page.getByRole('navigation', { name: 'Primary' })).toContainText('journey-writer');
+  await openPrimaryNavigation(page);
   await page.getByRole('button', { name: 'Log out' }).click();
   await expect(page).toHaveURL(/\/$/);
   expect(await page.evaluate(() => localStorage.getItem('writespace_session'))).toBeNull();
+  await openPrimaryNavigation(page);
   await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Sign in' }).click();
   await page.getByLabel('Username').fill('journey-writer');
   await page.getByLabel('Password').fill('demo-only');
@@ -43,9 +59,12 @@ test('public exploration to registration, reload, logout and exact local login',
   await page.getByLabel('Password').fill(' demo-only ');
   await page.getByRole('button', { name: 'Sign in' }).click();
   await expect(page).toHaveURL(/\/blogs$/);
+  await openPrimaryNavigation(page);
   await expect(page.getByRole('link', { name: 'Your reading space' })).toBeVisible();
+  await openPrimaryNavigation(page);
   await page.getByRole('link', { name: 'Explore', exact: true }).click();
   await expect(page).toHaveURL(/\/$/);
+  await openPrimaryNavigation(page);
   await page.getByRole('link', { name: 'Your reading space' }).click();
   await expect(page).toHaveURL(/\/blogs$/);
 });
@@ -66,7 +85,10 @@ test('registration required, mismatch, reserved and duplicate errors preserve in
   await page.getByLabel('Confirm password').fill(' demo-only ');
   await page.getByRole('button', { name: 'Create account' }).click();
   await expect(page).toHaveURL(/\/blogs$/);
+  await openPrimaryNavigation(page);
   await page.getByRole('button', { name: 'Log out' }).click();
+  await expect(page).toHaveURL(/\/$/);
+  await openPrimaryNavigation(page);
   await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Join WriteSpace' }).click();
   await fillRegistration(page);
   await page.getByRole('button', { name: 'Create account' }).click();
@@ -82,12 +104,17 @@ test('exact demo Admin login updates navigation and logout clears identity', asy
   await page.getByLabel('Password').fill('admin');
   await page.getByRole('button', { name: 'Sign in' }).click();
   await expect(page).toHaveURL(/\/admin$/);
+  await openPrimaryNavigation(page);
   await expect(page.getByRole('link', { name: 'Admin dashboard' })).toBeVisible();
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem('writespace_session')).role)).toBe('Admin');
   expect(await page.evaluate(() => localStorage.getItem('writespace_users'))).toBeNull();
+  await openPrimaryNavigation(page);
   await page.getByRole('link', { name: 'Explore', exact: true }).click();
+  await expect(page).toHaveURL(/\/$/);
+  await openPrimaryNavigation(page);
   await page.getByRole('link', { name: 'Admin dashboard' }).click();
   await expect(page).toHaveURL(/\/admin$/);
+  await openPrimaryNavigation(page);
   await page.getByRole('button', { name: 'Log out' }).click();
   await expect(page).toHaveURL(/\/$/);
   expect(await page.evaluate(() => localStorage.getItem('writespace_session'))).toBeNull();
@@ -145,6 +172,7 @@ for (const role of ['user', 'Admin']) {
           name: expectedPath === '/admin' ? 'Admin dashboard.' : 'Manage users.',
         })).toBeVisible();
       }
+      await openPrimaryNavigation(page);
       await expect(page.getByRole('button', { name: 'Log out' })).toBeVisible();
       expect(await page.evaluate(() => JSON.parse(localStorage.getItem('writespace_session')).role)).toBe(role);
     });
