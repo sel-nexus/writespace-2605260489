@@ -9,10 +9,12 @@ import { Avatar } from './Avatar.jsx';
  * Args:
  *   session: Validated local presentation record, or null for guests.
  *   onLogout: Explicit action delegated to the identity-owning route shell.
+ *   theme: Current app-owned presentation preference.
+ *   onToggleTheme: Explicit action delegated to the presentation-owning shell.
  * Returns:
  *   A header with native links; no authentication or storage mutations occur here.
  */
-export function Navbar({ session = null, onLogout }) {
+export function Navbar({ session = null, onLogout, theme = 'light', onToggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   useEffect(() => {
@@ -20,17 +22,17 @@ export function Navbar({ session = null, onLogout }) {
   }, [location.pathname, location.hash, session]);
 
   return (
-    <header className="border-b border-border bg-background">
+    <header className="border-b border-border bg-background dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-50">
       <div className="page-container flex min-h-20 flex-wrap items-center justify-between gap-4 py-3">
         <Link to="/" className="font-display text-2xl font-semibold tracking-tight" aria-label="WriteSpace home">
           WriteSpace
-          <span className="text-primary-700">
+          <span className="text-primary-700 dark:text-primary-300">
             .
           </span>
         </Link>
         <button
           type="button"
-          className="nav-link sm:hidden"
+          className="nav-link sm:hidden dark:text-neutral-50 dark:hover:bg-neutral-800 dark:focus-visible:ring-primary-300"
           aria-expanded={menuOpen}
           aria-controls="primary-navigation"
           aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
@@ -43,7 +45,9 @@ export function Navbar({ session = null, onLogout }) {
         <nav
           id="primary-navigation"
           aria-label="Primary"
-          className={`${menuOpen ? 'flex' : 'hidden'} w-full flex-col gap-2 sm:flex sm:w-auto sm:flex-row sm:items-center sm:gap-4`}
+          className={`${menuOpen ? 'flex' : 'hidden'} w-full flex-col gap-2 sm:flex sm:w-auto sm:flex-row sm:items-center sm:gap-4
+            dark:[&_.nav-link]:text-neutral-50 dark:[&_.nav-link:hover]:bg-neutral-800
+            dark:[&_.nav-link]:focus-visible:ring-primary-300`}
         >
           <NavLink to="/" end className="nav-link" onClick={() => setMenuOpen(false)}>
             Explore
@@ -59,7 +63,7 @@ export function Navbar({ session = null, onLogout }) {
                   <p className="font-semibold">
                     {session.displayName}
                   </p>
-                  <p className="text-xs text-foreground-muted">
+                  <p className="text-xs text-foreground-muted dark:text-neutral-300">
                     {session.role === 'Admin' ? 'Admin' : 'Writer'}
                   </p>
                 </div>
@@ -75,10 +79,25 @@ export function Navbar({ session = null, onLogout }) {
               <NavLink to="/login" className="nav-link">
                 Sign in
               </NavLink>
-              <Link to="/register" className="action-secondary">
+              <Link
+                to="/register"
+                className="action-secondary dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-50 dark:hover:bg-neutral-800"
+              >
                 Join WriteSpace
               </Link>
             </>
+          )}
+          {onToggleTheme && (
+            <button
+              type="button"
+              onClick={onToggleTheme}
+              className="rounded-control px-3 py-2 text-sm font-semibold hover:bg-surface-raised
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
+                dark:text-neutral-50 dark:hover:bg-neutral-800 dark:focus-visible:ring-primary-300
+                dark:focus-visible:ring-offset-neutral-900"
+            >
+              {theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+            </button>
           )}
         </nav>
       </div>
@@ -87,6 +106,8 @@ export function Navbar({ session = null, onLogout }) {
 }
 
 Navbar.propTypes = {
+  theme: PropTypes.oneOf(['light', 'dark']),
+  onToggleTheme: PropTypes.func,
   onLogout: PropTypes.func,
   session: PropTypes.shape({
     userId: PropTypes.string.isRequired,

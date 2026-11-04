@@ -61,15 +61,22 @@ export default function UserManagement({ session }) {
   }
 
   return (
-    <main id="main-content" className="page-container space-y-12 py-12 sm:py-16">
+    <main id="main-content" className="page-container space-y-12 py-12 sm:py-16 dark:text-slate-100">
       <header className="space-y-4">
-        <Link to="/admin" className="text-sm text-primary-700 hover:underline">
+        <Link
+          to="/admin"
+          className={[
+            'text-sm text-primary-700 hover:underline dark:text-primary-300',
+            'focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+            'dark:focus-visible:ring-primary-300 dark:focus-visible:ring-offset-slate-950',
+          ].join(' ')}
+        >
           Back to dashboard
         </Link>
         <h1 className="text-4xl sm:text-5xl">
           Manage users.
         </h1>
-        <p className="max-w-prose text-foreground-muted">
+        <p className="max-w-prose text-foreground-muted dark:text-slate-300">
           Local demo only. Passwords are stored as plain text. Do not use real passwords or sensitive data.
         </p>
       </header>
@@ -91,7 +98,7 @@ export default function UserManagement({ session }) {
             />
           ))}
           <div className="space-y-2">
-            <label htmlFor="role" className="block text-sm font-semibold">
+            <label htmlFor="role" className="block text-sm font-semibold dark:text-slate-100">
               Role
             </label>
             <select
@@ -103,7 +110,11 @@ export default function UserManagement({ session }) {
               aria-describedby={errors.role ? 'role-error' : undefined}
               value={values.role}
               onChange={(event) => setValues({ ...values, role: event.target.value })}
-              className="min-h-11 w-full rounded-control border border-border bg-surface px-3 py-2 focus:ring-2 focus:ring-ring"
+              className={[
+                'min-h-11 w-full rounded-control border border-border bg-surface px-3 py-2 focus:ring-2 focus:ring-ring',
+                'focus:ring-offset-2 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100',
+                'dark:focus:ring-primary-300 dark:focus:ring-offset-slate-900',
+              ].join(' ')}
             >
               <option value="">
                 Choose a role
@@ -116,22 +127,28 @@ export default function UserManagement({ session }) {
               </option>
             </select>
             {errors.role && (
-              <p id="role-error" role="alert" className="text-sm text-error">
+              <p id="role-error" role="alert" className="text-sm text-error dark:text-red-300">
                 {errors.role}
               </p>
             )}
           </div>
-          <button type="submit" className="action-primary">
+          <button
+            type="submit"
+            className={[
+              'action-primary dark:bg-primary-300 dark:text-primary-950 dark:hover:bg-primary-200',
+              'dark:focus-visible:ring-primary-300 dark:focus-visible:ring-offset-slate-950',
+            ].join(' ')}
+          >
             Create account
           </button>
         </form>
       </section>
-      <div role="status" aria-live="polite" className="text-sm text-foreground-muted">
+      <div role="status" aria-live="polite" className="text-sm text-foreground-muted dark:text-slate-300">
         {!result.ok && result.error.message}
         {status}
       </div>
       {error && (
-        <p role="alert" className="text-sm text-error">
+        <p role="alert" className="text-sm text-error dark:text-red-300">
           {error}
         </p>
       )}
@@ -139,11 +156,11 @@ export default function UserManagement({ session }) {
         <h2 id="local-accounts" className="text-3xl">
           Local accounts
         </h2>
-        <p className="text-sm text-foreground-muted">
+        <p className="text-sm text-foreground-muted dark:text-slate-300">
           The seeded Admin is shown separately and is never stored in the account collection.
         </p>
         {(!result.ok || result.value.length === 0) && (
-          <p className="text-foreground-muted">
+          <p className="text-foreground-muted dark:text-slate-300">
             No stored accounts yet.
           </p>
         )}
@@ -154,7 +171,11 @@ export default function UserManagement({ session }) {
           <thead className="sr-only md:not-sr-only md:table-header-group">
             <tr>
               {['Account', 'Username', 'Role', 'Created', 'Actions'].map((label) => (
-                <th key={label} scope="col" className="p-4 text-left text-sm font-semibold text-foreground-muted">
+                <th
+                  key={label}
+                  scope="col"
+                  className="p-4 text-left text-sm font-semibold text-foreground-muted dark:text-slate-300"
+                >
                   {label}
                 </th>
               ))}
@@ -166,7 +187,10 @@ export default function UserManagement({ session }) {
               return (
                 <tr
                   key={account.id}
-                  className="mb-4 block rounded-card border border-border bg-surface md:table-row md:border-x-0"
+                  className={[
+                    'mb-4 block rounded-card border border-border bg-surface md:table-row md:border-x-0',
+                    'dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100',
+                  ].join(' ')}
                 >
                   <td className="block p-4 md:table-cell">
                     <div className="flex items-center gap-3">
@@ -177,18 +201,24 @@ export default function UserManagement({ session }) {
                     </div>
                   </td>
                   <td className="block break-words p-4 md:table-cell">
-                    <span className="mr-2 text-sm text-foreground-muted md:hidden">
+                    <span className="mr-2 text-sm text-foreground-muted md:hidden dark:text-slate-300">
                       Username:
                     </span>
                     {account.username}
                   </td>
                   <td className="block p-4 md:table-cell">
-                    <span className="mr-2 text-sm text-foreground-muted md:hidden">
+                    <span className="mr-2 text-sm text-foreground-muted md:hidden dark:text-slate-300">
                       Role:
                     </span>
-                    {account.role}
+                    <span
+                      className={account.role === 'Admin'
+                        ? 'dark:rounded-control dark:bg-primary-950 dark:px-2 dark:py-1 dark:text-primary-200'
+                        : 'dark:rounded-control dark:bg-slate-800 dark:px-2 dark:py-1 dark:text-slate-200'}
+                    >
+                      {account.role}
+                    </span>
                   </td>
-                  <td className="block p-4 text-sm text-foreground-muted md:table-cell">
+                  <td className="block p-4 text-sm text-foreground-muted md:table-cell dark:text-slate-300">
                     {account.createdAt ? (
                       <time dateTime={account.createdAt}>
                         {new Date(account.createdAt).toLocaleDateString('en-US', { timeZone: 'UTC' })}
@@ -206,7 +236,13 @@ export default function UserManagement({ session }) {
                         aria-label={`Delete ${account.username}`}
                         disabled={Boolean(protection)}
                         title={protection || undefined}
-                        className="action-secondary disabled:cursor-not-allowed disabled:opacity-60"
+                        className={[
+                          'action-secondary disabled:cursor-not-allowed disabled:opacity-60',
+                          'dark:border-red-400 dark:text-red-300 dark:hover:bg-red-950',
+                          'dark:focus-visible:ring-red-300 dark:focus-visible:ring-offset-slate-900',
+                          'dark:disabled:border-slate-600 dark:disabled:text-slate-400',
+                          'dark:disabled:hover:bg-slate-900',
+                        ].join(' ')}
                         onClick={() => handleDelete(account)}
                       >
                         Delete

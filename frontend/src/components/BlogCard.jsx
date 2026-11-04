@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Avatar } from './Avatar.jsx';
 
-const accents = ['preview-accent-0', 'preview-accent-1', 'preview-accent-2'];
+const accents = [
+  'preview-accent-0 dark:border-t-primary-600',
+  'preview-accent-1 dark:border-t-primary-500',
+  'preview-accent-2 dark:border-t-primary-400',
+];
 
 /**
  * Show a post title, author, date and an excerpt capped at 120 content characters.
@@ -20,7 +24,13 @@ export function BlogCard({ post, index = 0 }) {
   const excerpt = characters.slice(0, 120).join('');
   const accent = accents[((index % accents.length) + accents.length) % accents.length];
   return (
-    <article className={`flex min-w-0 flex-col rounded-card border border-border border-t-2 bg-surface p-6 ${accent}`}>
+    <article
+      className={[
+        'flex min-w-0 flex-col rounded-card border border-border border-t-2 bg-surface p-6',
+        'dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100',
+        accent,
+      ].join(' ')}
+    >
       <div className="mb-6 flex items-center gap-3">
         <Avatar name={post.authorAvatar} />
         <div className="min-w-0 text-sm">
@@ -28,25 +38,31 @@ export function BlogCard({ post, index = 0 }) {
             {post.authorName}
           </p>
           {validDate ? (
-            <time dateTime={date.toISOString()} className="text-foreground-muted">
+            <time dateTime={date.toISOString()} className="text-foreground-muted dark:text-slate-300">
               {date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}
             </time>
           ) : (
-            <p className="text-foreground-muted">
+            <p className="text-foreground-muted dark:text-slate-300">
               Date unavailable
             </p>
           )}
         </div>
       </div>
       <h3 className="mb-3 break-words text-2xl leading-tight">
-        <Link to={`/blog/${encodeURIComponent(post.id)}`} className="hover:text-primary-700 hover:underline">
+        <Link
+          to={`/blog/${encodeURIComponent(post.id)}`}
+          className={[
+            'hover:text-primary-700 hover:underline dark:hover:text-primary-300 dark:focus-visible:ring-primary-300',
+            'dark:focus-visible:ring-offset-slate-900',
+          ].join(' ')}
+        >
           {post.title}
         </Link>
       </h3>
-      <p className="break-words text-base leading-relaxed text-foreground-muted">
+      <p className="break-words text-base leading-relaxed text-foreground-muted dark:text-slate-300">
         {excerpt}{characters.length > 120 ? '…' : ''}
       </p>
-      <p className="mt-auto pt-6 text-xs uppercase tracking-widest text-foreground-muted">
+      <p className="mt-auto pt-6 text-xs uppercase tracking-widest text-foreground-muted dark:text-slate-300">
         From this browser
       </p>
     </article>

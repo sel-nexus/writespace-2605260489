@@ -6,6 +6,15 @@ import { BlogCard } from '../components/BlogCard.jsx';
 import { listPosts, deletePost } from '../lib/posts.js';
 import { listUsers, SEEDED_ADMIN } from '../lib/accounts.js';
 
+const primaryAction = [
+  'action-primary dark:bg-primary-300 dark:text-primary-950 dark:hover:bg-primary-200',
+  'dark:focus-visible:ring-primary-300 dark:focus-visible:ring-offset-slate-950',
+].join(' ');
+const secondaryAction = [
+  'action-secondary dark:border-slate-600 dark:text-slate-100 dark:hover:bg-slate-800',
+  'dark:focus-visible:ring-primary-300 dark:focus-visible:ring-offset-slate-950',
+].join(' ');
+
 /**
  * Show four exact metrics and up to five newest posts with explicit actions.
  * Args:
@@ -42,22 +51,22 @@ export default function AdminDashboard({ session }) {
   }
 
   return (
-    <main id="main-content" className="page-container space-y-12 py-12 sm:py-16">
+    <main id="main-content" className="page-container space-y-12 py-12 sm:py-16 dark:text-slate-100">
       <header className="space-y-6">
-        <p className="section-label">
+        <p className="section-label dark:text-slate-300">
           Local administration
         </p>
         <h1 className="text-4xl sm:text-5xl">
           Admin dashboard.
         </h1>
-        <p className="max-w-prose text-foreground-muted">
+        <p className="max-w-prose text-foreground-muted dark:text-slate-300">
           Posts and accounts stay in this browser. Client-side roles are not a security boundary.
         </p>
         <div className="flex flex-wrap gap-3">
-          <Link to="/write" className="action-primary">
+          <Link to="/write" className={primaryAction}>
             Write New Post
           </Link>
-          <Link to="/users" className="action-secondary">
+          <Link to="/users" className={secondaryAction}>
             Manage Users
           </Link>
         </div>
@@ -65,8 +74,11 @@ export default function AdminDashboard({ session }) {
       <section aria-label="Local statistics" className="space-y-4">
         <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {metrics.map(([label, count]) => (
-            <div key={label} className="rounded-card border border-border bg-surface p-6">
-              <dt className="text-sm text-foreground-muted">
+            <div
+              key={label}
+              className="rounded-card border border-border bg-surface p-6 dark:border-slate-700 dark:bg-slate-900"
+            >
+              <dt className="text-sm text-foreground-muted dark:text-slate-300">
                 {label}
               </dt>
               <dd className="mt-3 text-3xl tabular-nums">
@@ -75,17 +87,17 @@ export default function AdminDashboard({ session }) {
             </div>
           ))}
         </dl>
-        <p className="text-sm text-foreground-muted">
+        <p className="text-sm text-foreground-muted dark:text-slate-300">
           Total Users includes the separate seeded Admin. Total users repeats that same count.
         </p>
       </section>
-      <div role="status" aria-live="polite" className="text-sm text-foreground-muted">
+      <div role="status" aria-live="polite" className="text-sm text-foreground-muted dark:text-slate-300">
         {!postResult.ok && postResult.error.message}
         {!userResult.ok && ` ${userResult.error.message}`}
         {status}
       </div>
       {error && (
-        <p role="alert" className="text-sm text-error">
+        <p role="alert" className="text-sm text-error dark:text-red-300">
           {error}
         </p>
       )}
@@ -94,7 +106,7 @@ export default function AdminDashboard({ session }) {
           Newest posts
         </h2>
         {posts.length === 0 ? (
-          <p className="text-foreground-muted">
+          <p className="text-foreground-muted dark:text-slate-300">
             No posts here yet.
           </p>
         ) : (
@@ -106,14 +118,17 @@ export default function AdminDashboard({ session }) {
                   <Link
                     to={`/edit/${encodeURIComponent(post.id)}`}
                     aria-label={`Edit ${post.title}`}
-                    className="action-secondary"
+                    className={secondaryAction}
                   >
                     Edit
                   </Link>
                   <button
                     type="button"
                     aria-label={`Delete ${post.title}`}
-                    className="action-secondary"
+                    className={[
+                      'action-secondary dark:border-red-400 dark:text-red-300 dark:hover:bg-red-950',
+                      'dark:focus-visible:ring-red-300 dark:focus-visible:ring-offset-slate-950',
+                    ].join(' ')}
                     onClick={() => handleDelete(post.id)}
                   >
                     Delete

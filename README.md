@@ -28,7 +28,12 @@ npm run test:e2e -- --workers=1
 
 The Node entry scripts work without npm binary symlinks. If npm suppresses esbuild postinstall in a restricted environment, run `node node_modules/esbuild/install.js` to install its native binary before building.
 
-Verified in the development sandbox: 594 unit/component tests; 135 browser cases across 390, 768 and 1280px, with 132 passing in the full run and the remaining three passing after correcting a test fixture's character-count expectation. Tests capture uncaught browser/console errors. The independent critic passed with score 1.0 and zero high failures. Playwright was upgraded to 1.58.2 after the older runner hung before collection.
+Verified in this change run: 680 unit/component tests passed (594 baseline plus 86 new cases). All 162 browser cases passed across the full run and a targeted rerun at 390, 768 and 1280px: the initial run passed 159, and a corrected dynamic-name test locator resolved the remaining three. No assertions were removed. Tests capture uncaught browser/console errors. Independent critic passed in round two with score 1.0 and zero high failures. Production build succeeded. Rendered accessibility/HTML/style evidence and screenshots are separate pipeline artifacts.
+
+## Theme preference
+Use “Switch to dark mode” or “Switch to light mode” in public or signed-in navigation (open the mobile menu on small screens). The root-owned preference changes immediately and is saved as the raw `light`/`dark` string under `writespace_theme`. Missing, invalid or unreadable values default to light; failed writes retain the current view but cannot guarantee reload persistence. Logout does not clear the preference. There is no operating-system or cross-tab synchronization. Existing account fields, post records, permissions and routes are unchanged; the content counter remains informational without a maximum.
+
+Dependency installation reported nine inherited npm audit findings (2 moderate, 5 high, 2 critical). This scoped UI change does not force dependency upgrades; review those before broader production use.
 
 ## Routes and code
 Public `/`, `/login`, `/register`; signed-in `/blogs`, `/blog/:id`, `/write`, `/edit/:id`; Admin `/admin`, `/users`. Unknown paths provide a return link. One router owns navigation. `src/lib/storage.js` centralizes guarded localStorage operations; auth/posts/accounts enforce repeated domain validation and permissions; page components own explicit input actions. Keys are `writespace_posts`, `writespace_users`, `writespace_session`. UUIDs use browser `crypto.randomUUID()` and require a supported secure context.

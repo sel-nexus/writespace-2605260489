@@ -1,6 +1,69 @@
 {
   "nodes": [
     {
+      "id": "changelog",
+      "label": "CHANGELOG.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_writespace_change_run_changelog",
+      "label": "WriteSpace change-run changelog",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_added",
+      "label": "Added",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_modified_files",
+      "label": "Modified files",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_review_fixes",
+      "label": "Review fixes",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_verification",
+      "label": "Verification",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "changelog_compatibility_migration_and_limitations",
+      "label": "Compatibility, migration and limitations",
+      "file_type": "document",
+      "node_kind": "heading",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_e2e_admin_spec",
       "label": "admin.spec.js",
       "file_type": "code",
@@ -189,6 +252,126 @@
       "file_type": "code",
       "source_file": "frontend/e2e/posts.spec.js",
       "source_location": "L30",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_theme_admin_spec",
+      "label": "theme-admin.spec.js",
+      "file_type": "code",
+      "source_file": "frontend/e2e/theme-admin.spec.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_theme_admin_spec_opennavigation",
+      "label": "openNavigation()",
+      "file_type": "code",
+      "source_file": "frontend/e2e/theme-admin.spec.js",
+      "source_location": "L5",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_theme_admin_spec_stored",
+      "label": "stored()",
+      "file_type": "code",
+      "source_file": "frontend/e2e/theme-admin.spec.js",
+      "source_location": "L13",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_theme_admin_spec_expectdark",
+      "label": "expectDark()",
+      "file_type": "code",
+      "source_file": "frontend/e2e/theme-admin.spec.js",
+      "source_location": "L18",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_theme_forms_spec",
+      "label": "theme-forms.spec.js",
+      "file_type": "code",
+      "source_file": "frontend/e2e/theme-forms.spec.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_theme_forms_spec_opennavigation",
+      "label": "openNavigation()",
+      "file_type": "code",
+      "source_file": "frontend/e2e/theme-forms.spec.js",
+      "source_location": "L5",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_theme_pages_spec",
+      "label": "theme-pages.spec.js",
+      "file_type": "code",
+      "source_file": "frontend/e2e/theme-pages.spec.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_theme_pages_spec_account",
+      "label": "account",
+      "file_type": "code",
+      "source_file": "frontend/e2e/theme-pages.spec.js",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_theme_pages_spec_post",
+      "label": "post",
+      "file_type": "code",
+      "source_file": "frontend/e2e/theme-pages.spec.js",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_theme_pages_spec_opennavigation",
+      "label": "openNavigation()",
+      "file_type": "code",
+      "source_file": "frontend/e2e/theme-pages.spec.js",
+      "source_location": "L15",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_theme_pages_spec_storedposts",
+      "label": "storedPosts()",
+      "file_type": "code",
+      "source_file": "frontend/e2e/theme-pages.spec.js",
+      "source_location": "L23",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_theme_pages_spec_seedrecords",
+      "label": "seedRecords()",
+      "file_type": "code",
+      "source_file": "frontend/e2e/theme-pages.spec.js",
+      "source_location": "L28",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_theme_spec",
+      "label": "theme.spec.js",
+      "file_type": "code",
+      "source_file": "frontend/e2e/theme.spec.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_theme_spec_opennavigation",
+      "label": "openNavigation()",
+      "file_type": "code",
+      "source_file": "frontend/e2e/theme.spec.js",
+      "source_location": "L5",
       "_callable": true,
       "_origin": "ast"
     },
@@ -651,6 +834,22 @@
       "community": 10
     },
     {
+      "id": "frontend_scripts_theme_preflight",
+      "label": "theme-preflight.mjs",
+      "file_type": "code",
+      "source_file": "frontend/scripts/theme-preflight.mjs",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_scripts_theme_preflight_output",
+      "label": "output",
+      "file_type": "code",
+      "source_file": "frontend/scripts/theme-preflight.mjs",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_app",
       "label": "App.jsx",
       "file_type": "code",
@@ -664,7 +863,7 @@
       "label": "initialSession()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -674,7 +873,16 @@
       "label": "AppRoutes()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L25",
+      "source_location": "L26",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_app_approutes_handletoggletheme",
+      "label": "handleToggleTheme()",
+      "file_type": "code",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L37",
       "_callable": true,
       "_origin": "ast"
     },
@@ -683,7 +891,7 @@
       "label": "handleLogout()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L31",
+      "source_location": "L44",
       "_callable": true,
       "_origin": "ast"
     },
@@ -692,7 +900,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L74",
+      "source_location": "L95",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -707,11 +915,19 @@
       "community": 0
     },
     {
+      "id": "frontend_src_components_avatar_rolestyles",
+      "label": "roleStyles",
+      "file_type": "code",
+      "source_file": "frontend/src/components/Avatar.jsx",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_components_avatar_avatar",
       "label": "Avatar()",
       "file_type": "code",
       "source_file": "frontend/src/components/Avatar.jsx",
-      "source_location": "L9",
+      "source_location": "L17",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -739,7 +955,7 @@
       "label": "BlogCard()",
       "file_type": "code",
       "source_file": "frontend/src/components/BlogCard.jsx",
-      "source_location": "L16",
+      "source_location": "L20",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -775,7 +991,7 @@
       "label": "Navbar()",
       "file_type": "code",
       "source_file": "frontend/src/components/Navbar.jsx",
-      "source_location": "L15",
+      "source_location": "L17",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -1441,6 +1657,40 @@
       "community": 2
     },
     {
+      "id": "frontend_src_lib_theme",
+      "label": "theme.js",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/theme.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_lib_theme_readtheme",
+      "label": "readTheme()",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/theme.js",
+      "source_location": "L10",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_lib_theme_writetheme",
+      "label": "writeTheme()",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/theme.js",
+      "source_location": "L28",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_lib_theme_test",
+      "label": "theme.test.js",
+      "file_type": "code",
+      "source_file": "frontend/src/lib/theme.test.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_main",
       "label": "main.jsx",
       "file_type": "code",
@@ -1517,11 +1767,27 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_src_pages_admindashboard_primaryaction",
+      "label": "primaryAction",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/AdminDashboard.jsx",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_admindashboard_secondaryaction",
+      "label": "secondaryAction",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/AdminDashboard.jsx",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_pages_admindashboard_admindashboard",
       "label": "AdminDashboard()",
       "file_type": "code",
       "source_file": "frontend/src/pages/AdminDashboard.jsx",
-      "source_location": "L16",
+      "source_location": "L25",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1530,7 +1796,7 @@
       "label": "handleDelete()",
       "file_type": "code",
       "source_file": "frontend/src/pages/AdminDashboard.jsx",
-      "source_location": "L30",
+      "source_location": "L39",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1672,11 +1938,35 @@
       "community": 0
     },
     {
+      "id": "frontend_src_pages_landingpage_primaryaction",
+      "label": "primaryAction",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/LandingPage.jsx",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_landingpage_secondaryaction",
+      "label": "secondaryAction",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/LandingPage.jsx",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_landingpage_footerlink",
+      "label": "footerLink",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/LandingPage.jsx",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_pages_landingpage_features",
       "label": "features",
       "file_type": "code",
       "source_file": "frontend/src/pages/LandingPage.jsx",
-      "source_location": "L7",
+      "source_location": "L20",
       "_origin": "ast",
       "community": 0
     },
@@ -1685,7 +1975,7 @@
       "label": "timestamp()",
       "file_type": "code",
       "source_file": "frontend/src/pages/LandingPage.jsx",
-      "source_location": "L14",
+      "source_location": "L27",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -1695,7 +1985,7 @@
       "label": "LandingPage()",
       "file_type": "code",
       "source_file": "frontend/src/pages/LandingPage.jsx",
-      "source_location": "L26",
+      "source_location": "L39",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -1850,11 +2140,19 @@
       "_origin": "ast"
     },
     {
+      "id": "frontend_src_pages_readblog_secondaryaction",
+      "label": "secondaryAction",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ReadBlog.jsx",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_pages_readblog_postnotfound",
       "label": "PostNotFound()",
       "file_type": "code",
       "source_file": "frontend/src/pages/ReadBlog.jsx",
-      "source_location": "L10",
+      "source_location": "L15",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1863,7 +2161,7 @@
       "label": "ReadBlog()",
       "file_type": "code",
       "source_file": "frontend/src/pages/ReadBlog.jsx",
-      "source_location": "L31",
+      "source_location": "L36",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1872,7 +2170,7 @@
       "label": "PostDetail()",
       "file_type": "code",
       "source_file": "frontend/src/pages/ReadBlog.jsx",
-      "source_location": "L39",
+      "source_location": "L44",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1881,7 +2179,7 @@
       "label": "handleDelete()",
       "file_type": "code",
       "source_file": "frontend/src/pages/ReadBlog.jsx",
-      "source_location": "L46",
+      "source_location": "L51",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1917,6 +2215,240 @@
       "file_type": "code",
       "source_file": "frontend/src/pages/RegisterPage.jsx",
       "source_location": "L37",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_theme_test",
+      "label": "Theme.test.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_theme_test_writer",
+      "label": "writer",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_theme_test_admin",
+      "label": "admin",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_theme_test_account",
+      "label": "account",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_theme_test_renderroutes",
+      "label": "renderRoutes()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L28",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themeadmin_test",
+      "label": "ThemeAdmin.test.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themeadmin_test_admin",
+      "label": "admin",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themeadmin_test_account",
+      "label": "account",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themeadmin_test_reader",
+      "label": "reader",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themeadmin_test_post",
+      "label": "post",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themeadmin_test_renderat",
+      "label": "renderAt()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L21",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themeadmin_test_stored",
+      "label": "stored()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L28",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themeadmin_test_fill",
+      "label": "fill()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L33",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themeforms_test",
+      "label": "ThemeForms.test.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themeforms_test_writer",
+      "label": "writer",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themeforms_test_account",
+      "label": "account",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themeforms_test_post",
+      "label": "post",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themeforms_test_renderat",
+      "label": "renderAt()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L28",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themeforms_test_stored",
+      "label": "stored()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L35",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themeforms_test_expectdarkfield",
+      "label": "expectDarkField()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L40",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themepages_test",
+      "label": "ThemePages.test.jsx",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themepages_test_owner",
+      "label": "owner",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themepages_test_other",
+      "label": "other",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themepages_test_admin",
+      "label": "admin",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themepages_test_post",
+      "label": "post",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themepages_test_renderat",
+      "label": "renderAt()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L27",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themepages_test_storedposts",
+      "label": "storedPosts()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L35",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_pages_themepages_test_expectfocus",
+      "label": "expectFocus()",
+      "file_type": "code",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L40",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2042,25 +2574,69 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 1
-    },
-    {
-      "id": "preflight",
-      "label": "preflight.mjs",
-      "file_type": "code",
-      "source_file": "preflight.mjs",
-      "source_location": "L1",
-      "_origin": "ast"
-    },
-    {
-      "id": "preflight_reports",
-      "label": "reports",
-      "file_type": "code",
-      "source_file": "preflight.mjs",
-      "source_location": "L5",
-      "_origin": "ast"
     }
   ],
   "links": [
+    {
+      "source": "changelog",
+      "target": "changelog_writespace_change_run_changelog",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_writespace_change_run_changelog",
+      "target": "changelog_added",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_writespace_change_run_changelog",
+      "target": "changelog_modified_files",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_writespace_change_run_changelog",
+      "target": "changelog_review_fixes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_writespace_change_run_changelog",
+      "target": "changelog_verification",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "changelog_writespace_change_run_changelog",
+      "target": "changelog_compatibility_migration_and_limitations",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CHANGELOG.md",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
     {
       "source": "frontend_e2e_admin_spec",
       "target": "frontend_e2e_fixtures",
@@ -2448,6 +3024,282 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/e2e/posts.spec.js",
       "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_admin_spec",
+      "target": "frontend_e2e_fixtures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-admin.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_admin_spec",
+      "target": "frontend_e2e_fixtures_test",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-admin.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_admin_spec",
+      "target": "frontend_e2e_theme_admin_spec_opennavigation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-admin.spec.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_admin_spec",
+      "target": "frontend_e2e_theme_admin_spec_stored",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-admin.spec.js",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_admin_spec",
+      "target": "frontend_e2e_theme_admin_spec_expectdark",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-admin.spec.js",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_admin_spec",
+      "target": "frontend_e2e_theme_admin_spec_opennavigation",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-admin.spec.js",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_admin_spec",
+      "target": "frontend_e2e_theme_admin_spec_expectdark",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-admin.spec.js",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_admin_spec",
+      "target": "frontend_e2e_theme_admin_spec_stored",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-admin.spec.js",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_forms_spec",
+      "target": "frontend_e2e_fixtures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-forms.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_forms_spec",
+      "target": "frontend_e2e_fixtures_test",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-forms.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_forms_spec",
+      "target": "frontend_e2e_theme_forms_spec_opennavigation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-forms.spec.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_forms_spec",
+      "target": "frontend_e2e_theme_forms_spec_opennavigation",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-forms.spec.js",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_pages_spec",
+      "target": "frontend_e2e_fixtures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-pages.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_pages_spec",
+      "target": "frontend_e2e_fixtures_test",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-pages.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_pages_spec",
+      "target": "frontend_e2e_theme_pages_spec_account",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-pages.spec.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_pages_spec",
+      "target": "frontend_e2e_theme_pages_spec_post",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-pages.spec.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_pages_spec",
+      "target": "frontend_e2e_theme_pages_spec_opennavigation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-pages.spec.js",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_pages_spec",
+      "target": "frontend_e2e_theme_pages_spec_storedposts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-pages.spec.js",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_pages_spec",
+      "target": "frontend_e2e_theme_pages_spec_seedrecords",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-pages.spec.js",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_pages_spec",
+      "target": "frontend_e2e_theme_pages_spec_seedrecords",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-pages.spec.js",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_pages_spec",
+      "target": "frontend_e2e_theme_pages_spec_opennavigation",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-pages.spec.js",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_pages_spec",
+      "target": "frontend_e2e_theme_pages_spec_storedposts",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme-pages.spec.js",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_spec",
+      "target": "frontend_e2e_fixtures",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_spec",
+      "target": "frontend_e2e_fixtures_test",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme.spec.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_spec",
+      "target": "frontend_e2e_theme_spec_opennavigation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme.spec.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_e2e_theme_spec",
+      "target": "frontend_e2e_theme_spec_opennavigation",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/e2e/theme.spec.js",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -2971,6 +3823,27 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_scripts_theme_preflight",
+      "target": "ref_playwright_test",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/scripts/theme-preflight.mjs",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_scripts_theme_preflight",
+      "target": "frontend_scripts_theme_preflight_output",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/scripts/theme-preflight.mjs",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_app",
       "target": "ref_react",
       "relation": "imports_from",
@@ -3181,11 +4054,44 @@
     },
     {
       "source": "frontend_src_app",
+      "target": "frontend_src_lib_theme",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
+      "target": "frontend_src_lib_theme_readtheme",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
+      "target": "frontend_src_lib_theme_writetheme",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app",
       "target": "frontend_src_app_initialsession",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3195,7 +4101,17 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L25",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_approutes",
+      "target": "frontend_src_app_approutes_handletoggletheme",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3205,7 +4121,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L31",
+      "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3215,7 +4131,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L74",
+      "source_location": "L95",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3227,7 +4143,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3238,7 +4154,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L77",
+      "source_location": "L98",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3255,11 +4171,21 @@
     },
     {
       "source": "frontend_src_components_avatar",
+      "target": "frontend_src_components_avatar_rolestyles",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/Avatar.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_avatar",
       "target": "frontend_src_components_avatar_avatar",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/components/Avatar.jsx",
-      "source_location": "L9",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3323,7 +4249,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/components/BlogCard.jsx",
-      "source_location": "L16",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3409,7 +4335,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/components/Navbar.jsx",
-      "source_location": "L15",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5506,6 +6432,70 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_lib_theme",
+      "target": "frontend_src_lib_theme_readtheme",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/theme.js",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_lib_theme",
+      "target": "frontend_src_lib_theme_writetheme",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/theme.js",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_lib_theme_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/theme.test.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_lib_theme_test",
+      "target": "frontend_src_lib_theme",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/theme.test.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_lib_theme_test",
+      "target": "frontend_src_lib_theme_readtheme",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/theme.test.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_lib_theme_test",
+      "target": "frontend_src_lib_theme_writetheme",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/lib/theme.test.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_main",
       "target": "ref_react",
       "relation": "imports_from",
@@ -5831,11 +6821,31 @@
     },
     {
       "source": "frontend_src_pages_admindashboard",
+      "target": "frontend_src_pages_admindashboard_primaryaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/AdminDashboard.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_admindashboard",
+      "target": "frontend_src_pages_admindashboard_secondaryaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/AdminDashboard.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_admindashboard",
       "target": "frontend_src_pages_admindashboard_admindashboard",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/AdminDashboard.jsx",
-      "source_location": "L16",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5845,7 +6855,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/AdminDashboard.jsx",
-      "source_location": "L30",
+      "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5856,7 +6866,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/AdminDashboard.jsx",
-      "source_location": "L117",
+      "source_location": "L132",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6433,7 +7443,7 @@
     },
     {
       "source": "frontend_src_pages_landingpage",
-      "target": "frontend_src_pages_landingpage_features",
+      "target": "frontend_src_pages_landingpage_primaryaction",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/LandingPage.jsx",
@@ -6443,11 +7453,41 @@
     },
     {
       "source": "frontend_src_pages_landingpage",
+      "target": "frontend_src_pages_landingpage_secondaryaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/LandingPage.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_landingpage",
+      "target": "frontend_src_pages_landingpage_footerlink",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/LandingPage.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_landingpage",
+      "target": "frontend_src_pages_landingpage_features",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/LandingPage.jsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_landingpage",
       "target": "frontend_src_pages_landingpage_timestamp",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/LandingPage.jsx",
-      "source_location": "L14",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6457,7 +7497,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/LandingPage.jsx",
-      "source_location": "L26",
+      "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6468,7 +7508,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/LandingPage.jsx",
-      "source_location": "L30",
+      "source_location": "L43",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7155,11 +8195,21 @@
     },
     {
       "source": "frontend_src_pages_readblog",
+      "target": "frontend_src_pages_readblog_secondaryaction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ReadBlog.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_readblog",
       "target": "frontend_src_pages_readblog_postnotfound",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/ReadBlog.jsx",
-      "source_location": "L10",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7169,7 +8219,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/ReadBlog.jsx",
-      "source_location": "L31",
+      "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7179,7 +8229,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/ReadBlog.jsx",
-      "source_location": "L39",
+      "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7189,7 +8239,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/ReadBlog.jsx",
-      "source_location": "L46",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7200,7 +8250,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/ReadBlog.jsx",
-      "source_location": "L33",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7211,7 +8261,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/ReadBlog.jsx",
-      "source_location": "L56",
+      "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7352,6 +8402,653 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/RegisterPage.jsx",
       "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_theme_test",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_theme_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_theme_test",
+      "target": "ref_testing_library_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_theme_test",
+      "target": "ref_testing_library_user_event",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_theme_test",
+      "target": "ref_react_router_dom",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_theme_test",
+      "target": "frontend_src_app",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_theme_test",
+      "target": "frontend_src_app_approutes",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_theme_test",
+      "target": "frontend_src_pages_theme_test_writer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_theme_test",
+      "target": "frontend_src_pages_theme_test_admin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_theme_test",
+      "target": "frontend_src_pages_theme_test_account",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_theme_test",
+      "target": "frontend_src_pages_theme_test_renderroutes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_theme_test",
+      "target": "frontend_src_pages_theme_test_renderroutes",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "ref_testing_library_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "ref_testing_library_user_event",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "frontend_src_app",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "frontend_src_lib_storage",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "frontend_src_lib_storage_storage_keys",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "frontend_src_pages_themeadmin_test_admin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "frontend_src_pages_themeadmin_test_account",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "frontend_src_pages_themeadmin_test_reader",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "frontend_src_pages_themeadmin_test_post",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "frontend_src_pages_themeadmin_test_renderat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "frontend_src_pages_themeadmin_test_stored",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "frontend_src_pages_themeadmin_test_fill",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "frontend_src_pages_themeadmin_test_renderat",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "frontend_src_pages_themeadmin_test_stored",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L86",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "frontend_src_pages_themeadmin_test_fill",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L130",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "ref_testing_library_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "ref_testing_library_user_event",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "ref_react_router_dom",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "frontend_src_app",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "frontend_src_components_avatar",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "frontend_src_components_avatar_avatar",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "frontend_src_pages_themeforms_test_writer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "frontend_src_pages_themeforms_test_account",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "frontend_src_pages_themeforms_test_post",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "frontend_src_pages_themeforms_test_renderat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "frontend_src_pages_themeforms_test_stored",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "frontend_src_pages_themeforms_test_expectdarkfield",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "frontend_src_pages_themeforms_test_renderat",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "frontend_src_pages_themeforms_test_expectdarkfield",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "frontend_src_pages_themeforms_test_stored",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themepages_test",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themepages_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themepages_test",
+      "target": "ref_testing_library_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themepages_test",
+      "target": "ref_testing_library_user_event",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themepages_test",
+      "target": "frontend_src_app",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themepages_test",
+      "target": "frontend_src_pages_themepages_test_owner",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themepages_test",
+      "target": "frontend_src_pages_themepages_test_other",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themepages_test",
+      "target": "frontend_src_pages_themepages_test_admin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themepages_test",
+      "target": "frontend_src_pages_themepages_test_post",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themepages_test",
+      "target": "frontend_src_pages_themepages_test_renderat",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themepages_test",
+      "target": "frontend_src_pages_themepages_test_storedposts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themepages_test",
+      "target": "frontend_src_pages_themepages_test_expectfocus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themepages_test",
+      "target": "frontend_src_pages_themepages_test_renderat",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themepages_test",
+      "target": "frontend_src_pages_themepages_test_expectfocus",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themepages_test",
+      "target": "frontend_src_pages_themepages_test_storedposts",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L63",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7556,7 +9253,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/UserManagement.jsx",
-      "source_location": "L210",
+      "source_location": "L246",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7728,16 +9425,6 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/vite.config.js",
       "source_location": "L3",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "preflight",
-      "target": "preflight_reports",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "preflight.mjs",
-      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7918,13 +9605,68 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_pages_theme_test",
+      "target": "frontend_src_app_app",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test",
+      "target": "frontend_src_app_app",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test",
+      "target": "frontend_src_app_app",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themepages_test",
+      "target": "frontend_src_app_app",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_app_initialsession",
       "target": "frontend_src_lib_auth_getsession",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L20",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_approutes",
+      "target": "frontend_src_lib_theme_writetheme",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7935,7 +9677,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L32",
+      "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8265,7 +10007,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/AdminDashboard.jsx",
-      "source_location": "L18",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8276,7 +10018,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/AdminDashboard.jsx",
-      "source_location": "L35",
+      "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8287,7 +10029,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/AdminDashboard.jsx",
-      "source_location": "L40",
+      "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8353,7 +10095,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/ReadBlog.jsx",
-      "source_location": "L40",
+      "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8364,7 +10106,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/ReadBlog.jsx",
-      "source_location": "L48",
+      "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8375,7 +10117,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/pages/ReadBlog.jsx",
-      "source_location": "L59",
+      "source_location": "L64",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8469,13 +10211,25 @@
     },
     {
       "source": "frontend_src_app_approutes",
+      "target": "frontend_src_lib_theme_readtheme",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_approutes",
       "target": "frontend_src_components_navbar_navbar",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L47",
+      "source_location": "L63",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8487,7 +10241,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L54",
+      "source_location": "L75",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8499,7 +10253,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L55",
+      "source_location": "L76",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8511,7 +10265,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L56",
+      "source_location": "L77",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8523,7 +10277,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L57",
+      "source_location": "L78",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8535,7 +10289,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L58",
+      "source_location": "L79",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8547,7 +10301,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L59",
+      "source_location": "L80",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8559,7 +10313,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L60",
+      "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8571,7 +10325,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L61",
+      "source_location": "L82",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8583,7 +10337,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L64",
+      "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8595,7 +10349,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L65",
+      "source_location": "L86",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8607,7 +10361,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L67",
+      "source_location": "L88",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_app_approutes_handletoggletheme",
+      "target": "frontend_src_lib_theme_writetheme",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/App.jsx",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8619,7 +10385,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/App.jsx",
-      "source_location": "L32",
+      "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8631,7 +10397,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/components/BlogCard.jsx",
-      "source_location": "L25",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8643,7 +10409,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/components/Navbar.jsx",
-      "source_location": "L57",
+      "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8691,7 +10457,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/pages/AdminDashboard.jsx",
-      "source_location": "L104",
+      "source_location": "L116",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8703,7 +10469,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/pages/AdminDashboard.jsx",
-      "source_location": "L35",
+      "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8715,7 +10481,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/pages/AdminDashboard.jsx",
-      "source_location": "L40",
+      "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8787,7 +10553,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/pages/Home.jsx",
-      "source_location": "L39",
+      "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8799,7 +10565,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.85,
       "source_file": "frontend/src/pages/LandingPage.jsx",
-      "source_location": "L27",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8811,7 +10577,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/pages/LandingPage.jsx",
-      "source_location": "L134",
+      "source_location": "L152",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8895,7 +10661,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/pages/ReadBlog.jsx",
-      "source_location": "L70",
+      "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8907,7 +10673,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/pages/ReadBlog.jsx",
-      "source_location": "L48",
+      "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8960,6 +10726,54 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_pages_theme_test_renderroutes",
+      "target": "frontend_src_app_approutes",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/Theme.test.jsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeadmin_test_renderat",
+      "target": "frontend_src_app_app",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/ThemeAdmin.test.jsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themeforms_test_renderat",
+      "target": "frontend_src_app_app",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/ThemeForms.test.jsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_pages_themepages_test_renderat",
+      "target": "frontend_src_app_app",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/pages/ThemePages.test.jsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_pages_usermanagement_usermanagement",
       "target": "frontend_src_components_formfield_formfield",
       "relation": "calls",
@@ -8967,7 +10781,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/pages/UserManagement.jsx",
-      "source_location": "L82",
+      "source_location": "L89",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8979,7 +10793,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/pages/UserManagement.jsx",
-      "source_location": "L173",
+      "source_location": "L197",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9081,10 +10895,10 @@
     }
   ],
   "metadata": {
-    "built_at": "2026-11-04T09:27:41.977016+00:00",
+    "built_at": "2026-11-04T12:41:17.849160+00:00",
     "version": "graph_update-v1",
-    "codebase_root": "C:\\artifacts-v2\\T0132PcJVCRTV000404112605260489\\developer",
+    "codebase_root": "C:\\artifacts-v2\\T0132PcJVCRTV000404112610093171\\developer",
     "force": true,
-    "files_scanned": 45
+    "files_scanned": 56
   }
 }

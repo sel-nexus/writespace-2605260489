@@ -13,6 +13,7 @@ const primary = {
   800: '#1f3d2f', 900: '#1a3227', 950: '#102219',
 };
 export default {
+  darkMode: 'class',
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
