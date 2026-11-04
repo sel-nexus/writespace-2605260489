@@ -8,15 +8,16 @@ import { Avatar } from './Avatar.jsx';
  * Toggle mobile navigation explicitly and close it on route navigation.
  * Args:
  *   session: Validated local presentation record, or null for guests.
+ *   onLogout: Explicit action delegated to the identity-owning route shell.
  * Returns:
  *   A header with native links; no authentication or storage mutations occur here.
  */
-export function Navbar({ session = null }) {
+export function Navbar({ session = null, onLogout }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   useEffect(() => {
     setMenuOpen(false);
-  }, [location.pathname, location.hash]);
+  }, [location.pathname, location.hash, session]);
 
   return (
     <header className="border-b border-border bg-background">
@@ -63,6 +64,11 @@ export function Navbar({ session = null }) {
                   </p>
                 </div>
               </div>
+              {onLogout && (
+                <button type="button" className="nav-link" onClick={onLogout}>
+                  Log out
+                </button>
+              )}
             </>
           ) : (
             <>
@@ -81,6 +87,7 @@ export function Navbar({ session = null }) {
 }
 
 Navbar.propTypes = {
+  onLogout: PropTypes.func,
   session: PropTypes.shape({
     userId: PropTypes.string.isRequired,
     username: PropTypes.string.isRequired,
