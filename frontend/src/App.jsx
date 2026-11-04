@@ -11,6 +11,8 @@ import Home from './pages/Home.jsx';
 import ReadBlog from './pages/ReadBlog.jsx';
 import WriteBlog from './pages/WriteBlog.jsx';
 import EditBlog from './pages/EditBlog.jsx';
+import AdminDashboard from './pages/AdminDashboard.jsx';
+import UserManagement from './pages/UserManagement.jsx';
 import { getSession, logout } from './lib/auth.js';
 
 /** Initialize identity without repairing storage or authenticating on render. */
@@ -19,7 +21,7 @@ function initialSession() {
   return result.ok ? result.value : null;
 }
 
-/** Protect future feature paths with not-found content, not fake feature screens. */
+/** Wire public and protected destinations to the confirmed local session. */
 function AppRoutes() {
   const [session, setSession] = useState(initialSession);
   const [logoutError, setLogoutError] = useState('');
@@ -54,13 +56,13 @@ function AppRoutes() {
         <Route path="/register" element={<RegisterPage session={session} onSessionChange={setSession} />} />
         <Route element={<ProtectedRoute session={session} />}>
           <Route path="/blogs" element={<Home />} />
-          <Route path="/blog/:id" element={<ReadBlog session={session} />} />
-          <Route path="/write" element={<WriteBlog session={session} />} />
-          <Route path="/edit/:id" element={<EditBlog session={session} />} />
+          <Route path="/blog/:id" element={session ? <ReadBlog session={session} /> : null} />
+          <Route path="/write" element={session ? <WriteBlog session={session} /> : null} />
+          <Route path="/edit/:id" element={session ? <EditBlog session={session} /> : null} />
         </Route>
         <Route element={<ProtectedRoute session={session} allowedRoles={['Admin']} />}>
-          <Route path="/admin" element={<NotFound />} />
-          <Route path="/users" element={<NotFound />} />
+          <Route path="/admin" element={session ? <AdminDashboard session={session} /> : null} />
+          <Route path="/users" element={session ? <UserManagement session={session} /> : null} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

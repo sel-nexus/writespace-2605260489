@@ -273,7 +273,8 @@ describe('route policy and render safety', () => {
     expect(window.location.pathname).toBe(path);
     const heading = path === '/blogs' ? 'Your reading space.'
       : path === '/write' ? 'Write a post.'
-        : path.startsWith('/blog/') || path.startsWith('/edit/') ? 'Post not found' : 'This page isn’t here.';
+        : path.startsWith('/blog/') || path.startsWith('/edit/') ? 'Post not found'
+          : path === '/admin' ? 'Admin dashboard.' : 'Manage users.';
     expect(screen.getByRole('heading', { name: heading })).toBeInTheDocument();
     expect(write).not.toHaveBeenCalled();
     expect(remove).not.toHaveBeenCalled();

@@ -140,6 +140,11 @@ for (const role of ['user', 'Admin']) {
       const denied = role === 'user' && ['/admin', '/users'].includes(path);
       const expectedPath = authScreen ? (role === 'Admin' ? '/admin' : '/blogs') : denied ? '/blogs' : path;
       await expect(page).toHaveURL(new RegExp(`${expectedPath}$`));
+      if (expectedPath === '/admin' || expectedPath === '/users') {
+        await expect(page.getByRole('heading', {
+          name: expectedPath === '/admin' ? 'Admin dashboard.' : 'Manage users.',
+        })).toBeVisible();
+      }
       await expect(page.getByRole('button', { name: 'Log out' })).toBeVisible();
       expect(await page.evaluate(() => JSON.parse(localStorage.getItem('writespace_session')).role)).toBe(role);
     });
