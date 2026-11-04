@@ -2042,22 +2042,6 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 1
-    },
-    {
-      "id": "preflight",
-      "label": "preflight.mjs",
-      "file_type": "code",
-      "source_file": "preflight.mjs",
-      "source_location": "L1",
-      "_origin": "ast"
-    },
-    {
-      "id": "preflight_reports",
-      "label": "reports",
-      "file_type": "code",
-      "source_file": "preflight.mjs",
-      "source_location": "L5",
-      "_origin": "ast"
     }
   ],
   "links": [
@@ -7732,16 +7716,6 @@
       "_origin": "ast"
     },
     {
-      "source": "preflight",
-      "target": "preflight_reports",
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "preflight.mjs",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
       "source": "frontend_src_app",
       "target": "frontend_src_pages_landingpage_landingpage",
       "relation": "imports",
@@ -9081,10 +9055,10 @@
     }
   ],
   "metadata": {
-    "built_at": "2026-11-04T09:27:41.977016+00:00",
+    "built_at": "2026-11-04T11:41:43.656345+00:00",
     "version": "graph_update-v1",
-    "codebase_root": "C:\\artifacts-v2\\T0132PcJVCRTV000404112605260489\\developer",
+    "codebase_root": "C:\\artifacts-v2\\T0132PcJVCRTV000404112610093171\\developer",
     "force": true,
-    "files_scanned": 45
+    "files_scanned": 44
   }
 }

@@ -1,5 +1,5 @@
-/** Own the single router and confirmed browser-local identity lifecycle. */
-import { useState } from 'react';
+/** Own the single router, local identity lifecycle and presentation preference. */
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import { Navbar } from './components/Navbar.jsx';
 import { ProtectedRoute } from './components/ProtectedRoute.jsx';
@@ -14,6 +14,7 @@ import EditBlog from './pages/EditBlog.jsx';
 import AdminDashboard from './pages/AdminDashboard.jsx';
 import UserManagement from './pages/UserManagement.jsx';
 import { getSession, logout } from './lib/auth.js';
+import { readTheme, writeTheme } from './lib/theme.js';
 
 /** Initialize identity without repairing storage or authenticating on render. */
 function initialSession() {
@@ -22,10 +23,22 @@ function initialSession() {
 }
 
 /** Wire public and protected destinations to the confirmed local session. */
-function AppRoutes() {
+export function AppRoutes() {
   const [session, setSession] = useState(initialSession);
   const [logoutError, setLogoutError] = useState('');
+  const [theme, setTheme] = useState(readTheme);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  }, [theme]);
+
+  /** Update presentation independently of identity and attempt persistence. */
+  function handleToggleTheme() {
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(nextTheme);
+    writeTheme(nextTheme);
+  }
 
   /** Retain identity and location if session removal cannot be confirmed. */
   function handleLogout() {
@@ -40,11 +53,16 @@ function AppRoutes() {
   }
 
   return (
-    <>
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-10 focus:bg-surface focus:p-4">
+    <div className="min-h-screen bg-background text-foreground dark:bg-neutral-950 dark:text-neutral-50">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-10 focus:bg-surface focus:p-4 dark:focus:bg-neutral-900">
         Skip to content
       </a>
-      <Navbar session={session} onLogout={handleLogout} />
+      <Navbar
+        session={session}
+        onLogout={handleLogout}
+        theme={theme}
+        onToggleTheme={handleToggleTheme}
+      />
       {logoutError && (
         <p role="alert" className="page-container py-4 text-sm text-error">
           Logout failed. {logoutError}
@@ -66,7 +84,7 @@ function AppRoutes() {
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </>
+    </div>
   );
 }
 
