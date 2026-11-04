@@ -35,16 +35,16 @@ export default function LoginPage({ session = null, onSessionChange }) {
 
   return (
     <ProtectedRoute session={session} guestOnly>
-      <main id="main-content" className="page-container py-16 sm:py-24">
+      <main id="main-content" className="page-container py-16 sm:py-24 dark:text-slate-100">
         <div className="mx-auto max-w-md space-y-8">
           <header className="space-y-3">
-            <p className="section-label">
+            <p className="section-label dark:text-slate-300">
               Your writing space
             </p>
             <h1 className="text-4xl sm:text-5xl">
               Welcome back.
             </h1>
-            <p className="text-foreground-muted">
+            <p className="text-foreground-muted dark:text-slate-300">
               Sign in to your browser-local account.
             </p>
           </header>
@@ -67,15 +67,24 @@ export default function LoginPage({ session = null, onSessionChange }) {
               autoComplete="current-password"
             />
             {message && (
-              <p role="alert" className="text-sm text-error">
+              <p role="alert" className="text-sm text-error dark:text-red-300">
                 {message}
               </p>
             )}
-            <button type="submit" className="action-primary w-full">
+            <button
+              type="submit"
+              className={[
+                'action-primary w-full dark:bg-primary-300 dark:text-primary-950 dark:hover:bg-primary-200',
+                'dark:focus-visible:ring-primary-300 dark:focus-visible:ring-offset-slate-950',
+              ].join(' ')}
+            >
               Sign in
             </button>
           </form>
-          <aside className="space-y-2 border-t border-border pt-6 text-sm text-foreground-muted" aria-label="Demo limitations">
+          <aside
+            className="space-y-2 border-t border-border dark:border-slate-700 pt-6 text-sm text-foreground-muted dark:text-slate-300"
+            aria-label="Demo limitations"
+          >
             <p>
               Demo Admin: username <strong>admin</strong>, password <strong>admin</strong>.
             </p>
@@ -85,7 +94,13 @@ export default function LoginPage({ session = null, onSessionChange }) {
           </aside>
           <p className="text-sm">
             New here?{' '}
-            <Link to="/register" className="text-primary-700 underline underline-offset-4">
+            <Link
+              to="/register"
+              className={[
+                'text-primary-700 underline underline-offset-4 dark:text-primary-300 dark:hover:text-primary-200',
+                'dark:focus-visible:ring-primary-300 dark:focus-visible:ring-offset-slate-950',
+              ].join(' ')}
+            >
               Join WriteSpace
             </Link>
           </p>
