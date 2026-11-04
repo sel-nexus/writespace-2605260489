@@ -262,16 +262,19 @@ describe('route policy and render safety', () => {
     localStorage.setItem(STORAGE_KEYS.session, JSON.stringify(userSession));
     renderAt(path);
     expect(window.location.pathname).toBe('/blogs');
-    expect(screen.getByText('Page not found')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Your reading space.' })).toBeInTheDocument();
   });
 
-  it.each(protectedPaths)('admits Admin direct entry %s with protected not-found content', (path) => {
+  it.each(protectedPaths)('admits Admin direct entry %s with the correct protected destination', (path) => {
     localStorage.setItem(STORAGE_KEYS.session, JSON.stringify(adminSession));
     const write = vi.spyOn(Storage.prototype, 'setItem');
     const remove = vi.spyOn(Storage.prototype, 'removeItem');
     renderAt(path);
     expect(window.location.pathname).toBe(path);
-    expect(screen.getByText('Page not found')).toBeInTheDocument();
+    const heading = path === '/blogs' ? 'Your reading space.'
+      : path === '/write' ? 'Write a post.'
+        : path.startsWith('/blog/') || path.startsWith('/edit/') ? 'Post not found' : 'This page isn’t here.';
+    expect(screen.getByRole('heading', { name: heading })).toBeInTheDocument();
     expect(write).not.toHaveBeenCalled();
     expect(remove).not.toHaveBeenCalled();
   });
@@ -280,7 +283,8 @@ describe('route policy and render safety', () => {
     localStorage.setItem(STORAGE_KEYS.session, JSON.stringify(userSession));
     renderAt(path);
     expect(window.location.pathname).toBe(path);
-    expect(screen.getByText('Page not found')).toBeInTheDocument();
+    const heading = path === '/blogs' ? 'Your reading space.' : path === '/write' ? 'Write a post.' : 'Post not found';
+    expect(screen.getByRole('heading', { name: heading })).toBeInTheDocument();
   });
 
   for (const session of [userSession, adminSession]) {

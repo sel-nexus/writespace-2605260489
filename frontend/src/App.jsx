@@ -7,6 +7,10 @@ import LandingPage from './pages/LandingPage.jsx';
 import NotFound from './pages/NotFound.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import RegisterPage from './pages/RegisterPage.jsx';
+import Home from './pages/Home.jsx';
+import ReadBlog from './pages/ReadBlog.jsx';
+import WriteBlog from './pages/WriteBlog.jsx';
+import EditBlog from './pages/EditBlog.jsx';
 import { getSession, logout } from './lib/auth.js';
 
 /** Initialize identity without repairing storage or authenticating on render. */
@@ -49,10 +53,10 @@ function AppRoutes() {
         <Route path="/login" element={<LoginPage session={session} onSessionChange={setSession} />} />
         <Route path="/register" element={<RegisterPage session={session} onSessionChange={setSession} />} />
         <Route element={<ProtectedRoute session={session} />}>
-          <Route path="/blogs" element={<NotFound />} />
-          <Route path="/blog/:id" element={<NotFound />} />
-          <Route path="/write" element={<NotFound />} />
-          <Route path="/edit/:id" element={<NotFound />} />
+          <Route path="/blogs" element={<Home />} />
+          <Route path="/blog/:id" element={<ReadBlog session={session} />} />
+          <Route path="/write" element={<WriteBlog session={session} />} />
+          <Route path="/edit/:id" element={<EditBlog session={session} />} />
         </Route>
         <Route element={<ProtectedRoute session={session} allowedRoles={['Admin']} />}>
           <Route path="/admin" element={<NotFound />} />

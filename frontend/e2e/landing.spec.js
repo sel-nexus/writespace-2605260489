@@ -47,10 +47,9 @@ test('newest local previews, responsive layout, CSS motion and honest route fall
   await page.screenshot({ path: testInfo.outputPath('landing-populated.png'), fullPage: true });
   const before = await page.evaluate(() => localStorage.getItem('writespace_posts'));
   await page.getByRole('link', { name: 'The newest page' }).click();
-  await expect(page).toHaveURL(/\/blog\/newest$/);
-  // This slice intentionally owns only / and *; account guards belong to the auth slice.
-  await expect(page.getByRole('heading', { name: 'This page isn’t here.' })).toBeVisible();
-  await page.getByRole('link', { name: 'Back to WriteSpace' }).click();
+  await expect(page).toHaveURL(/\/login$/);
+  await expect(page.getByRole('heading', { name: 'Welcome back.' })).toBeVisible();
+  await page.getByRole('link', { name: 'WriteSpace home', exact: true }).click();
   await expect(page.getByRole('link', { name: 'The newest page' })).toBeVisible();
   await page.reload();
   await expect(latest.getByRole('article')).toHaveCount(3);
@@ -81,10 +80,12 @@ test('empty landing, hero actions, footer destinations and mobile menu', async (
   await page.screenshot({ path: testInfo.outputPath('landing-empty.png'), fullPage: true });
   await page.getByRole('link', { name: 'Start writing' }).click();
   await expect(page).toHaveURL(/\/register$/);
-  await page.getByRole('link', { name: 'Back to WriteSpace' }).click();
+  await expect(page.getByRole('heading', { name: 'Join WriteSpace.' })).toBeVisible();
+  await page.getByRole('link', { name: 'WriteSpace home', exact: true }).click();
   await footer.getByRole('link', { name: 'Sign in' }).click();
   await expect(page).toHaveURL(/\/login$/);
-  await page.getByRole('link', { name: 'Back to WriteSpace' }).click();
+  await expect(page.getByRole('heading', { name: 'Welcome back.' })).toBeVisible();
+  await page.getByRole('link', { name: 'WriteSpace home', exact: true }).click();
   expect(await page.evaluate(() => localStorage.length)).toBe(0);
   expect(browserErrors).toEqual([]);
 });
@@ -106,7 +107,8 @@ for (const role of ['user', 'Admin']) {
     await page.screenshot({ path: testInfo.outputPath(`landing-${role}.png`), fullPage: true });
     await destination.click();
     await expect(page).toHaveURL(role === 'Admin' ? /\/admin$/ : /\/blogs$/);
-    await page.getByRole('link', { name: 'Back to WriteSpace' }).click();
+    await expect(page.getByRole('heading', { name: role === 'Admin' ? 'This page isn’t here.' : 'Your reading space.' })).toBeVisible();
+    await page.getByRole('link', { name: 'WriteSpace home', exact: true }).click();
     expect(await page.evaluate(() => JSON.parse(localStorage.getItem('writespace_session')).role)).toBe(role);
     expect(browserErrors).toEqual([]);
   });
